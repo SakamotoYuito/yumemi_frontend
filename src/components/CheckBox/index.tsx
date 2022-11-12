@@ -1,7 +1,7 @@
-import { usePrefecturesCheckBox } from '@/hooks/prefecturesCheckBox'
+import { usePrefecturesCheckBox } from '@/hooks/prefecturesCheckBox';
 
 export const PrefecturesCheckBoxComponent = () => {
-  const prefecturesList = usePrefecturesCheckBox()
+  const prefecturesList = usePrefecturesCheckBox();
   return (
     <form>
       {prefecturesList.map((prefName, index) => {
@@ -10,8 +10,8 @@ export const PrefecturesCheckBoxComponent = () => {
             <input type='checkbox' />
             {prefName}
           </label>
-        )
+        );
       })}
     </form>
-  )
-}
+  );
+};
