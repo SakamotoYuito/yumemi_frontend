@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import { fetcher } from '@/hooks/fetcher';
 import useSWR from 'swr';
-import { usePrefecturesCheckBox } from '@/hooks/prefecturesCheckBox';
+import { usePrefecturesCheckBox } from '@/hooks/usePrefecturesCheckBox';
 import { PrefecturesCheckBoxComponent } from '@/components/CheckBox';
 
 const Home: NextPage = () => {

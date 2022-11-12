@@ -1,4 +1,4 @@
-import { usePrefecturesCheckBox } from '@/hooks/prefecturesCheckBox';
+import { usePrefecturesCheckBox } from '@/hooks/usePrefecturesCheckBox';
 
 export const PrefecturesCheckBoxComponent = () => {
   const prefecturesList = usePrefecturesCheckBox();
