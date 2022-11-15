@@ -1,22 +1,13 @@
 import { usePrefecturesCheckBox } from '@/hooks/usePrefecturesCheckBox';
 
-type Props = {
-  onChange(e: React.BaseSyntheticEvent): void;
-};
-
-export const PrefecturesCheckBoxComponent = ({ onChange }: Props) => {
-  const prefecturesCheckBoxData = usePrefecturesCheckBox();
+export const PrefecturesCheckBoxComponent = () => {
+  const { prefecturesCheckBoxData, register } = usePrefecturesCheckBox();
   return (
     <form>
-      {prefecturesCheckBoxData.map((prefName, index) => {
+      {prefecturesCheckBoxData.checkBox.map(({ prefCode, prefName }, index) => {
         return (
           <label key={index}>
-            <input
-              id={String(index + 1)}
-              type='checkbox'
-              value={prefName}
-              onChange={(e) => onChange(e)}
-            />
+            <input type='checkbox' {...register(`checkBox.${index}.checked`)} />
             {prefName}
           </label>
         );
