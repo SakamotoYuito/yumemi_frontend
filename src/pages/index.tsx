@@ -1,20 +1,20 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
-import { usePrefecturesCheckBox } from '@/hooks/usePrefecturesCheckBox';
 import { PrefecturesCheckBoxComponent } from '@/components/CheckBox';
-import { usePopulationComposition } from '@/hooks/usePopulationComposition';
 import { GraphComponent } from '@/components/Graph';
-import { useSelectedOnChange } from '@/hooks/useSelectedOnChange';
+import { useFormMethods } from '@/hooks/useFormMethods';
+import { FormProvider } from 'react-hook-form';
 
 const Home: NextPage = () => {
-  const { handleChange, prefCodeList, prefNameList } = useSelectedOnChange();
-  console.log(prefCodeList);
+  const { methods } = useFormMethods();
+
   return (
     <>
       <div className={styles.container}>
-        <PrefecturesCheckBoxComponent onChange={handleChange} />
-        <GraphComponent checkedList={prefNameList} />
-        {prefCodeList}
+        <FormProvider {...methods}>
+          <PrefecturesCheckBoxComponent />
+          <GraphComponent />
+        </FormProvider>
       </div>
     </>
   );
