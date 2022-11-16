@@ -1,4 +1,4 @@
-import { usePrefecturesCheckBox } from '@/hooks/usePrefecturesCheckBox';
+import { usePrefecturesCheckBox } from 'src/hooks/usePrefecturesCheckBox';
 import styles from './styles.module.css';
 
 export const PrefecturesCheckBoxComponent = () => {

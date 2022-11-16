@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
-import { PrefecturesCheckBoxComponent } from '@/components/CheckBox';
-import { GraphComponent } from '@/components/Graph';
-import { useFormMethods } from '@/hooks/useFormMethods';
+import { PrefecturesCheckBoxComponent } from 'src/components/CheckBox';
+import { GraphComponent } from 'src/components/Graph';
+import { useFormMethods } from 'src/hooks/useFormMethods';
 import { FormProvider } from 'react-hook-form';
-import { HeaderComponent } from '@/components/Header';
+import { HeaderComponent } from 'src/components/Header';
 
 const Home: NextPage = () => {
   const { methods } = useFormMethods();

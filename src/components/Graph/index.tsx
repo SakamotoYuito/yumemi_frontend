@@ -9,9 +9,9 @@ import {
   Legend,
 } from 'recharts';
 import styles from './styles.module.css';
-import { useGraphDataShaping } from '@/hooks/useGraphDataShaping';
-import { useSelectedPrefectures } from '@/hooks/useSelectedPrefectures';
-import { useColor } from '@/hooks/useColor';
+import { useGraphDataShaping } from 'src/hooks/useGraphDataShaping';
+import { useSelectedPrefectures } from 'src/hooks/useSelectedPrefectures';
+import { useColor } from 'src/hooks/useColor';
 
 export const GraphComponent = () => {
   const { prefCodeList, prefNameList } = useSelectedPrefectures();
