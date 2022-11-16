@@ -6,7 +6,7 @@ export const useSelectedPrefectures = () => {
   const { watch } = useFormContext();
   const checkBoxForm = watch();
 
-  const prefCodeList = useMemo(() => {
+  const prefCodeList: number[] = useMemo(() => {
     if (checkBoxForm && checkBoxForm.checkBox.length > 0) {
       return checkBoxForm.checkBox
         .filter(({ checked }: CheckBoxData) => checked === true)
@@ -15,7 +15,7 @@ export const useSelectedPrefectures = () => {
     return [];
   }, [checkBoxForm]);
 
-  const prefNameList = useMemo(() => {
+  const prefNameList: string[] = useMemo(() => {
     if (checkBoxForm && checkBoxForm.checkBox.length > 0) {
       return checkBoxForm.checkBox
         .filter(({ checked }: CheckBoxData) => checked === true)
