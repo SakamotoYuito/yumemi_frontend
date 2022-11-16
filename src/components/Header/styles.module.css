@@ -3,5 +3,26 @@
   height: 50px;
   background-color: black;
   color: white;
-  text-align: center;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 300px) {
+  .header {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  .header {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .header {
+    font-size: 1.3rem;
+  }
 }
