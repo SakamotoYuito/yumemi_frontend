@@ -11,10 +11,12 @@ import {
 import styles from './styles.module.css';
 import { useGraphDataShaping } from '@/hooks/useGraphDataShaping';
 import { useSelectedPrefectures } from '@/hooks/useSelectedPrefectures';
+import { useColor } from '@/hooks/useColor';
 
 export const GraphComponent = () => {
   const { prefCodeList, prefNameList } = useSelectedPrefectures();
   const graphDataEachYear = useGraphDataShaping(prefCodeList, prefNameList);
+  const colorList = useColor();
 
   return (
     <div className={styles.graphContainer}>
@@ -22,7 +24,7 @@ export const GraphComponent = () => {
         <LineChart
           id='test'
           data={graphDataEachYear}
-          margin={{ top: 15, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 15, right: 30, left: 20, bottom: 15 }}
         >
           <CartesianGrid strokeDasharray='3 3' />
           <XAxis
@@ -34,15 +36,15 @@ export const GraphComponent = () => {
             label={{ value: '人口(万人)', offset: -10, angle: -90, position: 'insideLeft' }}
           />
           <Tooltip />
-          <Legend />
+          <Legend height={20} />
           {prefNameList.map((name: string, index: number) => {
             return (
               <Line
                 key={index}
                 type='monotone'
                 dataKey={name}
-                stroke='#8884d8'
-                activeDot={{ r: 8 }}
+                stroke={colorList[index]}
+                activeDot={{ r: 5 }}
               />
             );
           })}
