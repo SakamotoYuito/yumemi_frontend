@@ -6,13 +6,13 @@ type GraphDataObj = {
 
 export const useGraphDataShaping = (codes: number[], names: string[]) => {
   const dataFromApi = usePopulationComposition(codes, names);
-  const yearList = new Array(11).fill(0).map((value, index) => {
-    return 1970 + 5 * index;
+  const yearList = new Array(18).fill(0).map((value, index) => {
+    return 1960 + 5 * index;
   });
 
   const populationDataList = dataFromApi.map((dataInArea) => {
     const filteredPopulationList = dataInArea.value.filter(
-      (populationEachYear) => populationEachYear.year >= 1970 && populationEachYear.year <= 2020,
+      (populationEachYear) => populationEachYear.year >= 1960 && populationEachYear.year <= 2045,
     );
     return filteredPopulationList;
   });
