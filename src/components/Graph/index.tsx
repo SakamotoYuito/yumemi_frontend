@@ -19,10 +19,20 @@ export const GraphComponent = () => {
   return (
     <div className={styles.graphContainer}>
       <ResponsiveContainer width='100%' height='100%'>
-        <LineChart id='test' width={300} height={300} data={graphDataEachYear}>
+        <LineChart
+          id='test'
+          data={graphDataEachYear}
+          margin={{ top: 15, right: 30, left: 20, bottom: 5 }}
+        >
           <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='year' />
-          <YAxis />
+          <XAxis
+            dataKey='year'
+            label={{ value: '年度', offset: -7, position: 'insideBottomRight' }}
+          />
+          <YAxis
+            tickFormatter={(t) => String(t / 1000)}
+            label={{ value: '人口(万人)', offset: -10, angle: -90, position: 'insideLeft' }}
+          />
           <Tooltip />
           <Legend />
           {prefNameList.map((name: string, index: number) => {
