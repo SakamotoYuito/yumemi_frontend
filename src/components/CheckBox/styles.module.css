@@ -1,0 +1,19 @@
+.form {
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: azure;
+  text-align: center;
+}
+
+.form p {
+  padding: 5px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.form form {
+  display: flex;
+  flex-wrap: wrap;
+}

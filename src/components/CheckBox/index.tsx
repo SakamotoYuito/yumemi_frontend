@@ -1,17 +1,21 @@
 import { usePrefecturesCheckBox } from '@/hooks/usePrefecturesCheckBox';
+import styles from './styles.module.css';
 
 export const PrefecturesCheckBoxComponent = () => {
   const { prefecturesCheckBoxData, register } = usePrefecturesCheckBox();
   return (
-    <form>
-      {prefecturesCheckBoxData.checkBox.map(({ prefCode, prefName }, index) => {
-        return (
-          <label key={index}>
-            <input type='checkbox' {...register(`checkBox.${index}.checked`)} />
-            {prefName}
-          </label>
-        );
-      })}
-    </form>
+    <div className={styles.form}>
+      <p>都道府県一覧</p>
+      <form>
+        {prefecturesCheckBoxData.checkBox.map(({ prefCode, prefName }, index) => {
+          return (
+            <label key={index}>
+              <input type='checkbox' {...register(`checkBox.${index}.checked`)} />
+              {prefName}
+            </label>
+          );
+        })}
+      </form>
+    </div>
   );
 };
