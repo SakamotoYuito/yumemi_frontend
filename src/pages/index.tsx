@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import styles from './Home.module.css';
 import { PrefecturesCheckBoxComponent } from 'src/components/CheckBox';
 import { GraphComponent } from 'src/components/Graph';
 import { useFormMethods } from 'src/hooks/useFormMethods';
