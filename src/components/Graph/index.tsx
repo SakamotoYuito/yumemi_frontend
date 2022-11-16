@@ -24,12 +24,12 @@ export const GraphComponent = () => {
         <LineChart
           id='test'
           data={graphDataEachYear}
-          margin={{ top: 15, right: 30, left: 20, bottom: 15 }}
+          margin={{ top: 15, right: 20, left: 20, bottom: 15 }}
         >
           <CartesianGrid strokeDasharray='3 3' />
           <XAxis
             dataKey='year'
-            label={{ value: '年度', offset: -7, position: 'insideBottomRight' }}
+            label={{ value: '年', offset: -7, position: 'insideBottomRight' }}
           />
           <YAxis
             tickFormatter={(t) => String(t / 1000)}
