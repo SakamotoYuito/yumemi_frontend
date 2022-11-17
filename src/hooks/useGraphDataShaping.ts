@@ -21,7 +21,7 @@ export const useGraphDataShaping = (codes: number[], names: string[]) => {
     const graphDataEachYear: GraphDataObj = {
       year: year,
     };
-    populationDataList.map((data, dataIndex) => {
+    populationDataList.forEach((data, dataIndex) => {
       graphDataEachYear[dataFromApi[dataIndex].name] = data[yearIndex].value;
     });
     return graphDataEachYear;

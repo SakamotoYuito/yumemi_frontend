@@ -7,7 +7,7 @@ export const PrefecturesCheckBoxComponent = () => {
     <div className={styles.form}>
       <p>都道府県一覧</p>
       <form>
-        {prefecturesCheckBoxData.checkBox.map(({ prefCode, prefName }, index) => {
+        {prefecturesCheckBoxData.map(({ prefCode, prefName }, index) => {
           return (
             <label key={index}>
               <input type='checkbox' {...register(`checkBox.${index}.checked`)} />

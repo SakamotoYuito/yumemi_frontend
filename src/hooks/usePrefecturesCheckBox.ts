@@ -3,9 +3,7 @@ import { fetcher } from './fetcher';
 import useSWR from 'swr';
 import { useFormContext } from 'react-hook-form';
 
-type PrefecturesCheckBoxDataObj = {
-  checkBox: CheckBoxData[];
-};
+type PrefecturesCheckBoxDataObj = CheckBoxData[];
 
 export type CheckBoxData = {
   prefCode: number;
@@ -27,17 +25,15 @@ export const usePrefecturesCheckBox = () => {
 
   const prefecturesCheckBoxData: PrefecturesCheckBoxDataObj = useMemo(() => {
     if (typeof data === 'object' && 'result' in data) {
-      return {
-        checkBox: data.result.map((value: PrefecturesCheckBoxDataValue) => {
-          return { ...value, checked: false };
-        }),
-      };
+      return data.result.map((value: PrefecturesCheckBoxDataValue) => {
+        return { ...value, checked: false };
+      });
     }
-    return { checkBox: [] };
+    return [];
   }, [data]);
 
   useEffect(() => {
-    prefecturesCheckBoxData.checkBox.forEach((value: CheckBoxData, index: number) => {
+    prefecturesCheckBoxData.forEach((value: CheckBoxData, index: number) => {
       setValue(`checkBox.${index}`, value);
     });
   }, [prefecturesCheckBoxData, setValue]);
