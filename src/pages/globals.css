@@ -1,14 +1,29 @@
+:root {
+  --bg-1: #000000;
+  --bg-2: #ccffff;
+
+  --col-1: #ffffff;
+  --col-2: #000000;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #000000;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  padding: 5px;
+  margin: 0;
+  font-weight: bold;
 }
 
 * {
